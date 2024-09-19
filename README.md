@@ -1,0 +1,1 @@
+Job portal application, where employers can post job listings and manage applications, while job seekers can create profiles, upload resumes, and apply for jobs. Implement advanced search filters for job listings.
