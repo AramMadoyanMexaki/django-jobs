@@ -132,3 +132,43 @@ a {
     border: 2px solid red;
     font-weight: bold;
 }
+
+/* details */
+
+.detail {
+    background-color: #fff;
+    padding: 30px 0 25px 20px;
+}
+
+.job_title {
+    margin: 0;
+    margin-top: 25px;
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.job_descr {
+    margin: 0;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.btns {
+    margin-top: 30px;
+}
+
+.job_salary {
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.back {
+    color: #fff;
+    background-color: #000;
+}
+
+/*  */
