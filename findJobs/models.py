@@ -19,6 +19,7 @@ class Job(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     country = models.CharField(max_length=100, null=True)
+    selected = models.BooleanField(default=False)
 
 
     def __str__(self):

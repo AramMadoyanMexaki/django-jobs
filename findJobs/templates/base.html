@@ -23,7 +23,7 @@
                         <a href="#" class="nav_link">Add new job</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#" class="nav_link">My jobs</a>
+                        <a href="{% url 'my_jobs' %}" class="nav_link">My jobs</a>
                     </li>
                 </ul>
                 <ul class="list login_btns flex">
@@ -47,7 +47,7 @@
                             <p class="job_descr">{{ job.description }}</p>
                             <!-- <img src="" alt="job-image" class="job_image"> -->
                             <div class="job_btns">
-                                <a href="#" class="job_btn apply">Apply</a>
+                                <a href="{% url 'save_job' job.id %}" class="job_btn apply">Save the job</a>
                                 <a href="{% url 'details' id=job.id %}" class="job_btn read">Read more</a>
                             </div>
                         </li>

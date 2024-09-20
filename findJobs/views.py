@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from .models import *
 
@@ -25,3 +25,22 @@ def detail(request, id):
 
     return render(request, "detail.html", context)
 
+
+def my_jobs(request):
+    selected_jobs = Job.objects.filter(selected=True)
+
+    return render(request, "my_jobs.html", {"jobs": selected_jobs})
+
+
+def save_job(request, id):
+    job = get_object_or_404(Job, id=id)
+    job.selected = True
+    job.save()
+
+    return HttpResponseRedirect("/my-jobs/")
+
+
+def delete_job(request, id):
+    job = get_object_or_404(Job, id=id)
+
+ 

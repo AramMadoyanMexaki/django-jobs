@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="detail">
-        <img src="#" alt="job-image">
-        <h2 class="job_title">{{ title }}</h2>
-        <p class="job_descr">{{ description }}</p>
-        <span class="job_salary">{{ salary }}$</span>
+<div class="detail">
+    <img src="#" alt="job-image">
+    <h2 class="job_title">{{ title }}</h2>
+    <p class="job_descr">{{ description }}</p>
+    <span class="job_salary">{{ salary }}$</span>
 
-        <div class="btns">
-            <a href="#" class="job_btn apply">Apply</a>
-            <a href="{% url 'home' %}" class="job_btn back">Back</a>
-        </div>
+    <div class="btns">
+        <a href="{% url 'save_job' job.id %}" class="job_btn apply">Save the job</a>
+        <a href="{% url 'home' %}" class="job_btn back">Back</a>
     </div>
+</div>
 {% endblock %}
