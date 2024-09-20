@@ -42,5 +42,26 @@ def save_job(request, id):
 
 def delete_job(request, id):
     job = get_object_or_404(Job, id=id)
+    job.selected = False
+    job.save()
 
+    my_jobs = Job.objects.filter(selected=True)
+    
+    return render(request, "my_jobs.html", {"jobs": my_jobs})
  
+
+def add(request):
+    if request.method == "POST":
+        title = request.POST["title"]
+        descr = request.POST["descr"]
+        salary = request.POST["salary"]
+        photo = request.FILES.get("img")
+        cat = request.POST["cat"]
+
+        if photo:
+            Job.objects.create(title=title, description=descr, salary=salary, image=photo, category=cat)
+
+            return HttpResponseRedirect("/")
+    
+
+    return render(request, "add.html", {})

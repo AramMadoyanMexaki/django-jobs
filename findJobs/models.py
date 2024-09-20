@@ -20,6 +20,7 @@ class Job(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     country = models.CharField(max_length=100, null=True)
     selected = models.BooleanField(default=False)
+    image = models.ImageField(upload_to="jobs/photos/", blank=True, null=True)
 
 
     def __str__(self):

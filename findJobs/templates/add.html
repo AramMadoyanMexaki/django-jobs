@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'add_job' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" placeholder="Job title" name="title"><br>
+        <textarea name="descr" placeholder="Job description"></textarea><br><br>
+        <label for="image">Job image</label><br>
+        <input type="file" name="img"><br>
+        <input type="number" placeholder="Job salary" name="salary"><br><br>
+        <input type="text" placeholder="Job's category" name="cat"><br><br>
+        <button type="submit" class="add_btn">Add Job</button>
+    </form>
+{% endblock %}

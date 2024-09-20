@@ -37,10 +37,6 @@ ul {
     margin: 0 auto;
 }
 
-.flex {
-    display: flex;
-}
-
 .list {
     list-style-type: none;
     padding: 0;
@@ -51,6 +47,11 @@ a {
     text-decoration: none;
     color: #000;
 }
+
+.flex {
+    display: flex;
+}
+
 
 /* base header */
 
@@ -171,4 +172,4 @@ a {
     background-color: #000;
 }
 
-/*  */
+/* add form */

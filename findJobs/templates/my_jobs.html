@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 class="my_jobs_title">My Jobs</h1>
+
 <ul class="list jobs_list">
     {% for job in jobs %}
         <li class="job">
@@ -8,7 +10,7 @@
             <p class="job_descr">{{ job.description }}</p>
             <img src="" alt="job-image" class="job_image">
             <div class="job_btns">
-                <a href="#" class="job_btn delete">Delete</a>
+                <a href="{% url 'delete' id=job.id %}" class="job_btn del_btn">Delete</a>
                 <a href="{% url 'details' id=job.id %}" class="job_btn read">Read more</a>
             </div>
         </li>
