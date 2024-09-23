@@ -8,17 +8,19 @@ from .models import *
 
 
 def index(request):
-    jobs = Job.objects.all()
-
+    
     if request.user.is_authenticated:
+        jobs = Job.objects.all()
         username = request.user.username
+
+        context = {
+            "jobs": jobs,
+            "username": username,
+        }
     else:
         username = None
 
-    context = {
-        "jobs": jobs,
-        "username": username,
-    }
+        context = {}
 
     return render(request, "base.html", context)
 
@@ -150,3 +152,4 @@ def registrate(request):
 def log_out(request):
     logout(request)
     return HttpResponseRedirect("/login/")
+    
