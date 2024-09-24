@@ -104,7 +104,6 @@ def add(request):
     return HttpResponseRedirect("/login/")
 
 
-
 def _login(request):
     if request.method == "POST":
         password = request.POST["password"]
