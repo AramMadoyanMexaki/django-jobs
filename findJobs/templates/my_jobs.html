@@ -8,7 +8,7 @@
         <li class="job">
             <h2 class="job_title">{{job.title}}</h2>
             <p class="job_descr">{{ job.description }}</p>
-            <img src="" alt="job-image" class="job_image">
+            <img src="{{ img }}" alt="job-image" class="job_image">
             <div class="job_btns">
                 <a href="{% url 'delete' id=job.id %}" class="job_btn del_btn">Delete</a>
                 <a href="{% url 'details' id=job.id %}" class="job_btn read">Read more</a>

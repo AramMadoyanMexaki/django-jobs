@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'find' %}" method="get">
+        <input style="width: 650px; height: 40px; font-size: 23px;" type="text" placeholder="Search..." name="search">
+        <button style="padding: 15px 10px 10px 10px;" type="submit">Search</button>
+    </form><br>
+    {% if jobs %}
+        <div>
+            <ul class="list jobs_list">
+                {% for job in jobs %}
+                <li class="job">
+                    <h2 class="job_title">{{job.title}}</h2>
+                    <p class="job_descr">{{ job.description }}</p>
+                    <div class="job_btns">
+                        <a href="{% url 'save_job' job.id %}" class="job_btn apply">Save the job</a>
+                        <a href="{% url 'details' id=job.id %}" class="job_btn read">Read more</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <img src="{% static 'images/not_found2.png' %}" alt="not-found">
+        </div>
+    {% endif %}
+{% endblock %}

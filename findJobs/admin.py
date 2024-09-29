@@ -6,7 +6,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class JobAdmin(admin.ModelAdmin):
-    list_display = ("id", "title", "description", "salary", "country", "created_at", "updated_at", "category")
+    list_display = ("id", "title", "description", "salary", "country", "created_at", "updated_at", "category", "image")
 
 
 admin.site.register(Category, CategoryAdmin)

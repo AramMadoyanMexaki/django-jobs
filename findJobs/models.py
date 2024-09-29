@@ -3,7 +3,6 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
-
 class Category(models.Model):
     name = models.CharField(max_length=150)
 
@@ -21,6 +20,8 @@ class Job(models.Model):
     country = models.CharField(max_length=100, null=True)
     selected = models.BooleanField(default=False)
     image = models.ImageField(upload_to="jobs/photos/", blank=True, null=True)
+    selected_by = models.ManyToManyField(User, related_name="selected_jobs", blank=True)
+    created_by = models.OneToOneField(User, blank=True, null=True, on_delete=models.SET_NULL)
 
 
     def __str__(self):

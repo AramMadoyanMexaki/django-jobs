@@ -6,6 +6,7 @@
     <h2 class="job_title">{{ title }}</h2>
     <p class="job_descr">{{ description }}</p>
     <span class="job_salary">{{ salary }}$</span>
+    <span style="margin-top: 20px; font-weight: bold; display: block;" class="country">{{ country }}</span>
 
     <div class="btns">
         <a href="{% url 'save_job' job.id %}" class="job_btn apply">Save the job</a>
